@@ -2,10 +2,14 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import HeroNavLink from "./HeroNavLink";
+import { useContext } from 'react';
+import { MovieContext } from '../../Context/MovieContext';
 
 const HeroNavMenu = () => {
+  const {hiddenMenu} = useContext(MovieContext)
+
     return(
-        <div css={styles}>
+        <div css={styles} className={(hiddenMenu? "hidden" : "")+ "heroNavMenu"}>
           <HeroNavLink btnText="Popular" />
           <HeroNavLink btnText="All Movies"/>
         </div>

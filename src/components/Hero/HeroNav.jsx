@@ -2,13 +2,14 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import Container from '../Container';
+import { useContext } from 'react';
+import { MovieContext } from '../../Context/MovieContext';
 import HeroNavLogo from './HeroNavLogo';
 import HeroNavMenu from './HeroNavMenu';
 import HeroNavSearch from './HeroNavSearch';
-import {FaBars} from "react-icons/fa";
-
 
 const HeroNav = () => {
+  const {hiddenMenu, setHiddenMenu } = useContext(MovieContext)
     return(
         <nav css={styles}>
             <Container>
@@ -17,10 +18,13 @@ const HeroNav = () => {
                 <HeroNavMenu />
               </div>
               <HeroNavSearch />
-              <FaBars id='burgerMenu' />
+              <i 
+                id='burgerMenu' 
+                className={hiddenMenu ? "fa fa-bars" : "fa fa-times"}
+                ></i>
             </Container>
         </nav>
-    );
+    );  
 };
 
 const styles = css`
