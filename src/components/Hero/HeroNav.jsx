@@ -18,10 +18,11 @@ const HeroNav = () => {
                 <HeroNavMenu />
               </div>
               <HeroNavSearch />
-              <i 
-                id='burgerMenu' 
+              <i
+                onClick={() => setHiddenMenu(!hiddenMenu)}
+                id="burgerMenu"
                 className={hiddenMenu ? "fa fa-bars" : "fa fa-times"}
-                ></i>
+        ></i>
             </Container>
         </nav>
     );  

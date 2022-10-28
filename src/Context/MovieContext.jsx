@@ -9,7 +9,7 @@ export const MovieState = ({ children }) => {
     const [popularMovies, setPopularMovies] = useState([]);
 
     
-  const getPopularMovies = async () => {
+   const getPopularMovies = async () => {
    const popularMoviesResponse = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=3`);
    const popularMoviesData = await popularMoviesResponse.json();
    setPopularMovies(popularMoviesData);
@@ -18,7 +18,7 @@ export const MovieState = ({ children }) => {
  useEffect(() => {
    getPopularMovies();
  }, []);
- 
+
    return (
       <MovieContext.Provider value={{ 
             hiddenMenu, setHiddenMenu, activeLink, setActiveLink, popularMovies

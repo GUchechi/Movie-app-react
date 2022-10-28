@@ -9,7 +9,7 @@ const HeroNavMenu = () => {
   const {hiddenMenu} = useContext(MovieContext)
 
     return(
-        <div css={styles} className={(hiddenMenu? "hidden" : "")+ "heroNavMenu"}>
+        <div css={styles} className={(hiddenMenu? "hidden" : "")+ " heroNavMenu"}>
           <HeroNavLink btnText="Popular" />
           <HeroNavLink btnText="All Movies"/>
         </div>
