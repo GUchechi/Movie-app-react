@@ -1,11 +1,8 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { jsx, css } from '@emotion/react';
 
-const Loader = () => {
-   <div css={styles} className="loader">
-   
-   </div>
-};
+const Loader = () => <div css={styles} className="loader"></div>;
 
 const styles = css`
   position: absolute;

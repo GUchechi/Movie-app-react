@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/react';
 import { useContext } from "react";
 import { MovieContext } from "../../Context/MovieContext";
+import Movies from '../Movies/Movies';
 import Container from '../Container';
 import Popular from '../Popular/Popular';
 
@@ -10,7 +11,12 @@ const Output = () => {
     const {activeLink} = useContext(MovieContext)
     return(
         <div css={styles} className='output'>
-           {activeLink === 'Popular' && (
+         {activeLink === 'All Movies' && (
+            <Container>
+              <Movies />
+            </Container>
+           )}
+           {activeLink === "Popular" && (
             <Container>
                 <Popular />
             </Container>
